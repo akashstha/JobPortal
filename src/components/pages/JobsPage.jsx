@@ -1,5 +1,6 @@
+import { JobListings } from "../JobListings";
 export const JobsPages = () => {
     return(
-        <>Jobs Page</>
+        <JobListings/>
     )
 }
