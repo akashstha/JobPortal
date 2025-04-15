@@ -12,6 +12,13 @@ export default defineConfig({
   ],
   server:{
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   },
   // Add Tailwind CSS plugin configuration here if needed
   // tailwindcss() is not valid in this context

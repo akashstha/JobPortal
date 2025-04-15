@@ -1,12 +1,15 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import { MainLayouts } from './components/layouts/MainLayouts';
 import { HomePage } from './components/pages/HomePage';
+import JobPages, { jobDataLoader } from './components/pages/JobPages';
 import { JobsPages } from './components/pages/JobsPage';
 import { NotFoundPage } from './components/pages/NotFoundPage';
+
 const router = createBrowserRouter(createRoutesFromElements(
 <Route path="/" element={<MainLayouts/>}>
 <Route index element={<HomePage/>} />
 <Route path="/jobs" element={<JobsPages/>} />
+<Route path="/jobs/:id" element={<JobPages/> } loader={jobDataLoader}/>
 <Route path="*" element={<NotFoundPage/>} />
 </Route>
 )

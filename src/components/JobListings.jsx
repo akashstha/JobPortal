@@ -8,7 +8,7 @@ export const JobListings = ({ isHome = false }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:3001/jobs");
+        const response = await fetch("/api/jobs");
         const data = await response.json();
         // throw new Error("Error fetching
         setJobs(data);
