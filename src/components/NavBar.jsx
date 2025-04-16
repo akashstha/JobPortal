@@ -39,7 +39,7 @@ export const NavBar = () => {
                     Jobs
                   </NavLink>
                   <NavLink
-                    to="/add-job.html"
+                    to="/add-job"
                     className={activeClass}
                   >
                     Add Job
