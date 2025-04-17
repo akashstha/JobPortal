@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 export const AddJobs = ({ addNewJobRequest }) => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
@@ -28,9 +30,9 @@ export const AddJobs = ({ addNewJobRequest }) => {
         contactPhone,
       },
     };
-    console.log("test");
     addNewJobRequest(newJob);
-    navigate("/jobs");
+    toast.success("Job Added Successfully");
+    return navigate("/jobs");
   };
   return (
     <section className="bg-indigo-50">
@@ -40,7 +42,10 @@ export const AddJobs = ({ addNewJobRequest }) => {
             <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
             <div className="mb-4">
-              <label htmlFor="type" className="block text-gray-700 font-bold mb-2">
+              <label
+                htmlFor="type"
+                className="block text-gray-700 font-bold mb-2"
+              >
                 Job Type
               </label>
               <select
@@ -92,7 +97,10 @@ export const AddJobs = ({ addNewJobRequest }) => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="type" className="block text-gray-700 font-bold mb-2">
+              <label
+                htmlFor="type"
+                className="block text-gray-700 font-bold mb-2"
+              >
                 Salary
               </label>
               <select
@@ -118,7 +126,9 @@ export const AddJobs = ({ addNewJobRequest }) => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Location</label>
+              <label className="block text-gray-700 font-bold mb-2">
+                Location
+              </label>
               <input
                 type="text"
                 id="location"
